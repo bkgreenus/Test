@@ -1,0 +1,36 @@
+#Define original time
+time1 = float(input('Type the current time 24-hr: '))
+
+#Return to time 1 if entry is greater than 24 (one time alert)
+if time1 > 24:
+    float(input('ALERT! Time must be <= 24. Type the current time 24-hr: '))
+
+#Define original time and additional time
+time2 = float(input('Type additional time: '))
+
+#Calculation and print if input is 24
+if time2 == 24:
+    print("The new time is: ", int(time1))
+    exit()
+
+#Calculation and print if combined time is less than 24
+time3 = (time1 + time2)
+if time3 <= 24:
+    print("The new time is: ", int(time1 + time2))
+    exit()
+
+#Define a new variable if additional time greater than 24 
+time3a = (time3 / 24)
+
+#Define new variable if there is a remainder
+new_time3 = (time3a % 1)
+
+#Print if there is no remainder 
+if new_time3 == 0:
+	print ('The new time is: ',int(time1))
+	exit()
+#Print if there is a remainder
+else: 
+    new_time4 = round(new_time3 * 24)
+    print('The new time is: ', new_time4)
+    exit()
